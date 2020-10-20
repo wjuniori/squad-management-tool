@@ -1,11 +1,14 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
+import Main from './PageDefault.styles';
 
 const PageDefault: React.FC = ({ children }) => {
   return (
     <>
       <NavBar />
-      <main>{children}</main>
+      <Main>{children}</Main>
+      <Footer />
     </>
   );
 };

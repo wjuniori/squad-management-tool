@@ -2,10 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
-    --color-background: #f7f3f7;
+    --color-background-body: #f7f3f7;
+    --color-background-footer: #e9e3e9;
+
     --color-primary: #c13b4e;
+
     --color-text-primary: #ffffff;
     --color-text-secondary: #000000;
+    --color-text-light: #6A686A;
 
     font-size: 60%;
   }
@@ -31,7 +35,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: var(--color-background);
+    background: var(--color-background-body);
   }
 
   body,
@@ -40,6 +44,11 @@ export default createGlobalStyle`
   textarea {
     font: 500 1.6rem Poppins;
     /* color: var(--color-text-base); */
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
   }
 
   button {
