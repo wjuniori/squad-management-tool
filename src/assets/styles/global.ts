@@ -5,8 +5,11 @@ export default createGlobalStyle`
     --color-background-body: #f7f3f7;
     --color-background-footer: #e9e3e9;
     --color-background-table: #f7eef7;
+    --color-background-box: #ffffff;
 
     --color-primary: #c13b4e;
+    --color-secondary: #56398a;
+    --color-tertiary: #843c80;
 
     --color-text-primary: #ffffff;
     --color-text-secondary: #000000;

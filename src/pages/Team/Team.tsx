@@ -12,7 +12,9 @@ const Team: React.FC = () => {
         <Row>
           <Col width="100%">
             <WhiteBox>
-              <WhiteBox.Title>Create your team</WhiteBox.Title>
+              <WhiteBox.Header>
+                <WhiteBox.Title>Create your team</WhiteBox.Title>
+              </WhiteBox.Header>
             </WhiteBox>
           </Col>
         </Row>
