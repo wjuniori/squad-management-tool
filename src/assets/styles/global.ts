@@ -4,12 +4,16 @@ export default createGlobalStyle`
   :root {
     --color-background-body: #f7f3f7;
     --color-background-footer: #e9e3e9;
+    --color-background-table: #f7eef7;
 
     --color-primary: #c13b4e;
 
     --color-text-primary: #ffffff;
     --color-text-secondary: #000000;
     --color-text-light: #6A686A;
+    --color-text-table: #ba568d;
+
+    --color-divider: #f1f1f1;
 
     font-size: 60%;
   }

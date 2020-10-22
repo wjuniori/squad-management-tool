@@ -5,13 +5,16 @@ import Row from '../../components/GridSystem/Row/Row';
 import Col from '../../components/GridSystem/Col/Col';
 import WhiteBox from '../../components/WhiteBox/WhiteBox';
 import useTeams from '../../hooks/useTeams';
+import teamsData from '../../data/teams.json';
+import TableTeams from '../../components/Tables/TableTeams/TableTeams';
 
 const Home: React.FC = () => {
-  const { teams } = useTeams();
+  const { teams, setTeams } = useTeams();
 
   useEffect(() => {
-    console.log('teams', teams);
-  }, [teams]);
+    // console.log('teams', teams);
+    setTeams(teamsData);
+  }, [setTeams]);
 
   return (
     <PageDefault>
@@ -20,6 +23,7 @@ const Home: React.FC = () => {
           <Col width="50%">
             <WhiteBox>
               <WhiteBox.Title>My teams</WhiteBox.Title>
+              <TableTeams teams={teams} />
             </WhiteBox>
           </Col>
           <Col width="50%">

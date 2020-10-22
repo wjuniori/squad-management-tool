@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Barcelona",
+    "description": "Barcelona Squad",
+    "website": "sitebarcelona",
+    "type": 0
+  },
+  {
+    "id": 2,
+    "name": "Real Madrid",
+    "description": "Real Madrid Squad",
+    "website": "siterealmadrid",
+    "type": 0
+  },
+  {
+    "id": 3,
+    "name": "Milan",
+    "description": "Milan Squad",
+    "website": "sitemilan",
+    "type": 0
+  },
+  {
+    "id": 4,
+    "name": "Liverpool",
+    "description": "Liverpool Squad",
+    "website": "siteliverpool",
+    "type": 1
+  },
+  {
+    "id": 5,
+    "name": "Bayern Munich",
+    "description": "Bayern Munich Squad",
+    "website": "sitebayer",
+    "type": 1
+  },
+  {
+    "id": 6,
+    "name": "Lazio",
+    "description": "Lazio Squad",
+    "website": "sitelazio",
+    "type": 1
+  }
+]
