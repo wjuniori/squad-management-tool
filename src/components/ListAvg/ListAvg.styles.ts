@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import WhiteBox from '../WhiteBox/WhiteBox';
 
-export const List: any = styled.div``;
+const List: any = styled.div``;
 
 List.Title = styled.h4`
   padding-top: 20px;
@@ -14,7 +14,7 @@ List.Body = styled.div`
   border-radius: 8px;
 `;
 
-export const CustomWhiteBox = styled(WhiteBox)`
+List.Item = styled(WhiteBox)`
   margin-top: 0;
   margin-bottom: 3px;
 
@@ -28,9 +28,11 @@ export const CustomWhiteBox = styled(WhiteBox)`
   }
 `;
 
-CustomWhiteBox.Body = styled(WhiteBox.Body)`
+List.ItemBody = styled(WhiteBox.Body)`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
 `;
+
+export default List;

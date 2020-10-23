@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomWhiteBox, List } from './ListAvg.styles';
+import List from './ListAvg.styles';
 import { Team } from '../../@types/team';
 
 interface ListAvgProps {
@@ -11,27 +11,25 @@ interface ListAvgProps {
   ) => void;
 }
 
-const ListAvg: React.FC<ListAvgProps> = ({ title, teams, onClick }) => {
-  return (
-    <List>
-      <List.Title>{title}</List.Title>
-      <List.Body>
-        {teams.map((team: Team) => (
-          <CustomWhiteBox
-            key={team.id}
-            onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) =>
-              onClick && onClick(event, team)
-            }
-          >
-            <CustomWhiteBox.Body>
-              <span>{team.name}</span>
-              <span>31.9</span>
-            </CustomWhiteBox.Body>
-          </CustomWhiteBox>
-        ))}
-      </List.Body>
-    </List>
-  );
-};
+const ListAvg: React.FC<ListAvgProps> = ({ title, teams, onClick }) => (
+  <List>
+    <List.Title>{title}</List.Title>
+    <List.Body>
+      {teams.map((team: Team) => (
+        <List.Item
+          key={team.id}
+          onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) =>
+            onClick && onClick(event, team)
+          }
+        >
+          <List.ItemBody>
+            <span>{team.name}</span>
+            <span>31.9</span>
+          </List.ItemBody>
+        </List.Item>
+      ))}
+    </List.Body>
+  </List>
+);
 
 export default ListAvg;

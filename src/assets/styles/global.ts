@@ -18,6 +18,8 @@ export default createGlobalStyle`
     --color-text-table: #ba568d;
 
     --color-border-list: #de7194;
+    --color-border-profile-emphasis: #9c59aa;
+    --color-border-profile: #a33862;
 
     --color-divider: #f1f1f1;
 

@@ -9,9 +9,10 @@ import WhiteBox from '../../components/WhiteBox/WhiteBox';
 import useTeams from '../../hooks/useTeams';
 import teamsData from '../../data/teams.json';
 import TableTeams from '../../components/Tables/TableTeams/TableTeams';
-import ButtonCreate from './Home.styles';
+import { ButtonCreate, PurpleBox } from './Home.styles';
 import ListAvg from '../../components/ListAvg/ListAvg';
 import { Team } from '../../@types/team';
+import Card from '../../components/Card/Card';
 
 const Home: React.FC = () => {
   const { teams, setTeams } = useTeams();
@@ -78,11 +79,25 @@ const Home: React.FC = () => {
                 </Row>
               </WhiteBox.Body>
             </WhiteBox>
-            <WhiteBox>
-              <WhiteBox.Header>
-                <WhiteBox.Title>Player</WhiteBox.Title>
-              </WhiteBox.Header>
-            </WhiteBox>
+            <PurpleBox>
+              <Row>
+                <Col width="50%">
+                  <Card
+                    title="Most picked player"
+                    playerInitials="CR"
+                    percentage={75}
+                    emphasis
+                  />
+                </Col>
+                <Col width="50%">
+                  <Card
+                    title="Less picked player"
+                    playerInitials="ZZ"
+                    percentage={25}
+                  />
+                </Col>
+              </Row>
+            </PurpleBox>
           </Col>
         </Row>
       </Container>

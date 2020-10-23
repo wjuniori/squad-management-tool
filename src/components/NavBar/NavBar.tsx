@@ -4,7 +4,6 @@ import {
   TopNavWrapper,
   Image,
   TopNavContent,
-  Dot,
   Text,
   CustomLink,
 } from './NavBar.styles';
@@ -12,6 +11,7 @@ import Container from '../GridSystem/Container/Container';
 import Row from '../GridSystem/Row/Row';
 import Col from '../GridSystem/Col/Col';
 import logo from '../../assets/images/logo-venturus.png';
+import Dot from '../Dot/Dot';
 
 const NavBar: React.FC = () => (
   <TopNav>

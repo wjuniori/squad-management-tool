@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import ButtonPrimary from '../../components/Buttons/ButtonPrimary/ButtonPrimary';
+import WhiteBox from '../../components/WhiteBox/WhiteBox';
 
-const ButtonCreate = styled(ButtonPrimary)`
+export const ButtonCreate = styled(ButtonPrimary)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,4 +10,6 @@ const ButtonCreate = styled(ButtonPrimary)`
   border-radius: 12px;
 `;
 
-export default ButtonCreate;
+export const PurpleBox = styled(WhiteBox)`
+  background-color: var(--color-tertiary);
+`;
