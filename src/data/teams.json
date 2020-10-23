@@ -2,43 +2,49 @@
   {
     "id": 1,
     "name": "Barcelona",
-    "description": "Barcelona Squad",
+    "description": "Messi's team",
     "website": "sitebarcelona",
-    "type": 0
+    "type": 0,
+    "avg": 31.9
   },
   {
     "id": 2,
     "name": "Real Madrid",
-    "description": "Real Madrid Squad",
+    "description": "Zidane's team",
     "website": "siterealmadrid",
-    "type": 0
+    "type": 0,
+    "avg": 31.7
   },
   {
     "id": 3,
     "name": "Milan",
-    "description": "Milan Squad",
+    "description": "Kaká's former team",
     "website": "sitemilan",
-    "type": 0
+    "type": 0,
+    "avg": 31.6
   },
   {
     "id": 4,
     "name": "Liverpool",
-    "description": "Liverpool Squad",
+    "description": "Plays at Anfield",
     "website": "siteliverpool",
-    "type": 1
+    "type": 1,
+    "avg": 31.4
   },
   {
     "id": 5,
     "name": "Bayern Munich",
-    "description": "Bayern Munich Squad",
+    "description": "Champions league champion",
     "website": "sitebayer",
-    "type": 1
+    "type": 1,
+    "avg": 31.3
   },
   {
     "id": 6,
     "name": "Lazio",
-    "description": "Lazio Squad",
+    "description": "Italian team",
     "website": "sitelazio",
-    "type": 1
+    "type": 1,
+    "avg": 22.5
   }
 ]

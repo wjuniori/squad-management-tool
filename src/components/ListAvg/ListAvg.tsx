@@ -5,10 +5,7 @@ import { Team } from '../../@types/team';
 interface ListAvgProps {
   title: string;
   teams: Team[];
-  onClick?: (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
-    team: Team
-  ) => void;
+  onClick?: (team: Team) => void;
 }
 
 const ListAvg: React.FC<ListAvgProps> = ({ title, teams, onClick }) => (
@@ -16,12 +13,7 @@ const ListAvg: React.FC<ListAvgProps> = ({ title, teams, onClick }) => (
     <List.Title>{title}</List.Title>
     <List.Body>
       {teams.map((team: Team) => (
-        <List.Item
-          key={team.id}
-          onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) =>
-            onClick && onClick(event, team)
-          }
-        >
+        <List.Item key={team.id} onClick={() => onClick && onClick(team)}>
           <List.ItemBody>
             <span>{team.name}</span>
             <span>31.9</span>

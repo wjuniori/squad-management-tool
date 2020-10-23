@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import Table from '../Table/Table';
 
-const TableDiv = styled.div`
+export const TableDiv = styled.div`
   overflow-x: auto;
 `;
 
-export default TableDiv;
+export const TableHeadCellClickable = styled(Table.HeadCell)`
+  :hover {
+    cursor: pointer;
+  }
+`;

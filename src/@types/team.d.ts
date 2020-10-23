@@ -16,4 +16,5 @@ export interface Team {
   tags?: string[];
   formation?: string;
   players?: Player[];
+  avgAge?: number;
 }

@@ -23,18 +23,11 @@ const Home: React.FC = () => {
     setTeams(teamsData);
   }, [setTeams]);
 
-  const handleClickCreate = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    event.preventDefault();
+  const handleClickCreate = () => {
     history.push('/team');
   };
 
-  const handleClickEdit = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
-    team: Team
-  ) => {
-    event.preventDefault();
+  const handleClickEdit = (team: Team) => {
     history.push('/team');
   };
 
