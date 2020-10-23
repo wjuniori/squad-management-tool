@@ -6,6 +6,7 @@ export default createGlobalStyle`
     --color-background-footer: #e9e3e9;
     --color-background-table: #f7eef7;
     --color-background-box: #ffffff;
+    --color-background-list: #e3dde2;
 
     --color-primary: #c13b4e;
     --color-secondary: #56398a;
@@ -15,6 +16,8 @@ export default createGlobalStyle`
     --color-text-secondary: #000000;
     --color-text-light: #6A686A;
     --color-text-table: #ba568d;
+
+    --color-border-list: #de7194;
 
     --color-divider: #f1f1f1;
 

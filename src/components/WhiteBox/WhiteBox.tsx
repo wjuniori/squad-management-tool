@@ -21,6 +21,7 @@ WhiteBox.Header = styled.div`
 
 WhiteBox.Title = styled.h1`
   color: var(--color-secondary);
+  padding: 5px;
 `;
 
 WhiteBox.Body = styled.div`

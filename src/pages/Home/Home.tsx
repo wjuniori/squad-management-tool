@@ -10,6 +10,8 @@ import useTeams from '../../hooks/useTeams';
 import teamsData from '../../data/teams.json';
 import TableTeams from '../../components/Tables/TableTeams/TableTeams';
 import ButtonCreate from './Home.styles';
+import ListAvg from '../../components/ListAvg/ListAvg';
+import { Team } from '../../@types/team';
 
 const Home: React.FC = () => {
   const { teams, setTeams } = useTeams();
@@ -22,6 +24,14 @@ const Home: React.FC = () => {
 
   const handleClickCreate = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    history.push('/team');
+  };
+
+  const handleClickEdit = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    team: Team
   ) => {
     event.preventDefault();
     history.push('/team');
@@ -49,6 +59,24 @@ const Home: React.FC = () => {
               <WhiteBox.Header>
                 <WhiteBox.Title>Top 5</WhiteBox.Title>
               </WhiteBox.Header>
+              <WhiteBox.Body>
+                <Row>
+                  <Col width="50%">
+                    <ListAvg
+                      title="Highest avg age"
+                      teams={teams}
+                      onClick={handleClickEdit}
+                    />
+                  </Col>
+                  <Col width="50%">
+                    <ListAvg
+                      title="Lowest avg age"
+                      teams={teams}
+                      onClick={handleClickEdit}
+                    />
+                  </Col>
+                </Row>
+              </WhiteBox.Body>
             </WhiteBox>
             <WhiteBox>
               <WhiteBox.Header>
