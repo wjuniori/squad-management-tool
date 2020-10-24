@@ -5,7 +5,7 @@
     "description": "Messi's team",
     "website": "sitebarcelona",
     "type": 0,
-    "avg": 31.9
+    "avgAge": 31.4
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "description": "Zidane's team",
     "website": "siterealmadrid",
     "type": 0,
-    "avg": 31.7
+    "avgAge": 31.7
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "description": "Kaká's former team",
     "website": "sitemilan",
     "type": 0,
-    "avg": 31.6
+    "avgAge": 22.5
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "description": "Plays at Anfield",
     "website": "siteliverpool",
     "type": 1,
-    "avg": 31.4
+    "avgAge": 31.9
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "description": "Champions league champion",
     "website": "sitebayer",
     "type": 1,
-    "avg": 31.3
+    "avgAge": 31.3
   },
   {
     "id": 6,
@@ -45,6 +45,6 @@
     "description": "Italian team",
     "website": "sitelazio",
     "type": 1,
-    "avg": 22.5
+    "avgAge": 31.6
   }
 ]

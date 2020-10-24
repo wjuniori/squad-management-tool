@@ -13,6 +13,8 @@ import { ButtonCreate, PurpleBox } from './Home.styles';
 import ListAvg from '../../components/ListAvg/ListAvg';
 import { Team } from '../../@types/team';
 import Card from '../../components/Card/Card';
+import { sortByKeyAndDirection } from '../../util';
+import { Direction } from '../../@types/enum';
 
 const Home: React.FC = () => {
   const { teams, setTeams } = useTeams();
@@ -29,6 +31,18 @@ const Home: React.FC = () => {
 
   const handleClickEdit = (team: Team) => {
     history.push('/team');
+  };
+
+  const ListAverage = (teamsParam: Team[], direction: Direction) => {
+    const sortableTeams = [...teamsParam];
+
+    sortableTeams.sort((itemA, itemB) =>
+      sortByKeyAndDirection(itemA, itemB, 'avgAge', Direction.Ascending)
+    );
+
+    return direction === Direction.Ascending
+      ? sortableTeams.slice(0, 5)
+      : sortableTeams.slice(-5).reverse();
   };
 
   return (
@@ -58,14 +72,14 @@ const Home: React.FC = () => {
                   <Col width="50%">
                     <ListAvg
                       title="Highest avg age"
-                      teams={teams}
+                      teams={ListAverage(teams, Direction.Descending)}
                       onClick={handleClickEdit}
                     />
                   </Col>
                   <Col width="50%">
                     <ListAvg
                       title="Lowest avg age"
-                      teams={teams}
+                      teams={ListAverage(teams, Direction.Ascending)}
                       onClick={handleClickEdit}
                     />
                   </Col>

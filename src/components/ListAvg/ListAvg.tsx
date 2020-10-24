@@ -16,7 +16,7 @@ const ListAvg: React.FC<ListAvgProps> = ({ title, teams, onClick }) => (
         <List.Item key={team.id} onClick={() => onClick && onClick(team)}>
           <List.ItemBody>
             <span>{team.name}</span>
-            <span>31.9</span>
+            <span>{team.avgAge}</span>
           </List.ItemBody>
         </List.Item>
       ))}
