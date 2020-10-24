@@ -10,3 +10,25 @@ export const TableHeadCellClickable = styled(Table.HeadCell)`
     cursor: pointer;
   }
 `;
+
+export const TableRowHover = styled(Table.Row)`
+  :hover {
+    svg {
+      visibility: visible;
+    }
+  }
+`;
+
+export const TableCellAction = styled(Table.Cell)`
+  svg {
+    visibility: hidden;
+
+    :not(:last-child) {
+      margin-right: 10px;
+    }
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+`;

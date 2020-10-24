@@ -33,6 +33,10 @@ const Home: React.FC = () => {
     history.push('/team');
   };
 
+  const handleClickRemove = (team: Team) => {
+    console.log('Button Remove is clicked');
+  };
+
   const ListAverage = (teamsParam: Team[], direction: Direction) => {
     const sortableTeams = [...teamsParam];
 
@@ -58,7 +62,11 @@ const Home: React.FC = () => {
                 </ButtonCreate>
               </WhiteBox.Header>
               <WhiteBox.Body>
-                <TableTeams teams={teams} />
+                <TableTeams
+                  teams={teams}
+                  onClickRemove={handleClickRemove}
+                  onClickEdit={handleClickEdit}
+                />
               </WhiteBox.Body>
             </WhiteBox>
           </Col>

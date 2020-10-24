@@ -17,13 +17,14 @@ List.Body = styled.div`
 List.Item = styled(WhiteBox)`
   margin-top: 0;
   margin-bottom: 3px;
+  border: 2px solid transparent;
 
   :last-child {
     margin-bottom: 0;
   }
 
   :hover {
-    border: 2px solid var(--color-border-list);
+    border-color: var(--color-border-list);
     cursor: pointer;
   }
 `;

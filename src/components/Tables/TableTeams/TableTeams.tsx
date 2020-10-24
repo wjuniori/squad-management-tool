@@ -1,14 +1,28 @@
 import React from 'react';
-import { TableDiv, TableHeadCellClickable } from './TableTeams.styles';
+import {
+  TableDiv,
+  TableHeadCellClickable,
+  TableRowHover,
+  TableCellAction,
+} from './TableTeams.styles';
 import { Team } from '../../../@types/team';
 import Table from '../Table/Table';
 import useSortableData from '../../../hooks/useSortableData';
+import { FaShareAlt, FaTrash, FaPencilAlt } from 'react-icons/fa';
 
 interface TableTeamsProps {
   teams: Team[];
+  onClickRemove?: (team: Team) => void;
+  onClickShare?: (team: Team) => void;
+  onClickEdit?: (team: Team) => void;
 }
 
-const TableTeams: React.FC<TableTeamsProps> = ({ teams }) => {
+const TableTeams: React.FC<TableTeamsProps> = ({
+  teams,
+  onClickRemove,
+  onClickShare,
+  onClickEdit,
+}) => {
   const { items: sortedTeams, requestSort } = useSortableData(teams);
 
   return (
@@ -19,7 +33,10 @@ const TableTeams: React.FC<TableTeamsProps> = ({ teams }) => {
             <TableHeadCellClickable onClick={() => requestSort('name')}>
               Name
             </TableHeadCellClickable>
-            <TableHeadCellClickable onClick={() => requestSort('description')}>
+            <TableHeadCellClickable
+              colSpan={2}
+              onClick={() => requestSort('description')}
+            >
               Description
             </TableHeadCellClickable>
           </Table.HeadRow>
@@ -27,10 +44,24 @@ const TableTeams: React.FC<TableTeamsProps> = ({ teams }) => {
 
         <Table.Body>
           {sortedTeams.map((team: Team) => (
-            <Table.Row key={team.id}>
+            <TableRowHover key={team.id}>
               <Table.Cell>{team.name}</Table.Cell>
               <Table.Cell>{team.description}</Table.Cell>
-            </Table.Row>
+              <TableCellAction>
+                <FaTrash
+                  size={10}
+                  onClick={() => onClickRemove && onClickRemove(team)}
+                />
+                <FaShareAlt
+                  size={10}
+                  onClick={() => onClickShare && onClickShare(team)}
+                />
+                <FaPencilAlt
+                  size={10}
+                  onClick={() => onClickEdit && onClickEdit(team)}
+                />
+              </TableCellAction>
+            </TableRowHover>
           ))}
         </Table.Body>
       </Table>
