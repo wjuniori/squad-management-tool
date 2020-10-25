@@ -10,11 +10,11 @@ export interface Player {
 export interface Team {
   id: number;
   name: string;
-  description?: string;
-  website: string;
+  description: string;
+  url: string;
   type: TeamType;
   tags?: string[];
-  formation?: string;
+  formation: string;
   players?: Player[];
-  avgAge?: number;
+  avgAge: number;
 }

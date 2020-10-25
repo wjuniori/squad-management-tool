@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 import PageDefault from '../../components/PageDefault/PageDefault';
@@ -25,6 +25,14 @@ const Home: React.FC = () => {
     setTeams(teamsData);
   }, [setTeams]);
 
+  const avgAgeSortedItems = useMemo(() => {
+    const sortableTeams = [...teams];
+    sortableTeams.sort((itemA, itemB) =>
+      sortByKeyAndDirection(itemA, itemB, 'avgAge', Direction.Ascending)
+    );
+    return sortableTeams;
+  }, [teams]);
+
   const handleClickCreate = () => {
     history.push('/team');
   };
@@ -34,19 +42,7 @@ const Home: React.FC = () => {
   };
 
   const handleClickRemove = (team: Team) => {
-    console.log('Button Remove is clicked');
-  };
-
-  const ListAverage = (teamsParam: Team[], direction: Direction) => {
-    const sortableTeams = [...teamsParam];
-
-    sortableTeams.sort((itemA, itemB) =>
-      sortByKeyAndDirection(itemA, itemB, 'avgAge', Direction.Ascending)
-    );
-
-    return direction === Direction.Ascending
-      ? sortableTeams.slice(0, 5)
-      : sortableTeams.slice(-5).reverse();
+    console.log('Button Remove was clicked');
   };
 
   return (
@@ -80,14 +76,14 @@ const Home: React.FC = () => {
                   <Col width="50%">
                     <ListAvg
                       title="Highest avg age"
-                      teams={ListAverage(teams, Direction.Descending)}
+                      teams={avgAgeSortedItems.slice(-5).reverse()}
                       onClick={handleClickEdit}
                     />
                   </Col>
                   <Col width="50%">
                     <ListAvg
                       title="Lowest avg age"
-                      teams={ListAverage(teams, Direction.Ascending)}
+                      teams={avgAgeSortedItems.slice(0, 5)}
                       onClick={handleClickEdit}
                     />
                   </Col>

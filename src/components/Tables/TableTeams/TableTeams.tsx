@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaShareAlt, FaTrash, FaPencilAlt } from 'react-icons/fa';
 import {
   TableDiv,
   TableHeadCellClickable,
@@ -8,7 +9,6 @@ import {
 import { Team } from '../../../@types/team';
 import Table from '../Table/Table';
 import useSortableData from '../../../hooks/useSortableData';
-import { FaShareAlt, FaTrash, FaPencilAlt } from 'react-icons/fa';
 
 interface TableTeamsProps {
   teams: Team[];
