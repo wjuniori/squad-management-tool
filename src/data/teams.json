@@ -1,56 +1,58 @@
-[
-  {
-    "id": 1,
-    "name": "Barcelona",
-    "description": "Messi's team",
-    "url": "sitebarcelona",
-    "type": 0,
-    "formation": "3 - 2 - 2 - 3",
-    "avgAge": 31.4
-  },
-  {
-    "id": 2,
-    "name": "Real Madrid",
-    "description": "Zidane's team",
-    "url": "siterealmadrid",
-    "type": 0,
-    "formation": "3 - 2 - 3 - 1",
-    "avgAge": 31.7
-  },
-  {
-    "id": 3,
-    "name": "Milan",
-    "description": "Kaká's former team",
-    "url": "sitemilan",
-    "type": 0,
-    "formation": "3 - 4 - 3",
-    "avgAge": 22.5
-  },
-  {
-    "id": 4,
-    "name": "Liverpool",
-    "description": "Plays at Anfield",
-    "url": "siteliverpool",
-    "type": 1,
-    "formation": "3 - 5 - 2",
-    "avgAge": 31.9
-  },
-  {
-    "id": 5,
-    "name": "Bayern Munich",
-    "description": "Champions league champion",
-    "url": "sitebayer",
-    "type": 1,
-    "formation": "4 - 2 - 3 - 1",
-    "avgAge": 31.3
-  },
-  {
-    "id": 6,
-    "name": "Lazio",
-    "description": "Italian team",
-    "url": "sitelazio",
-    "type": 1,
-    "formation": "4 - 3 - 1 - 1",
-    "avgAge": 31.6
-  }
-]
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Barcelona",
+      "description": "Messi's team",
+      "url": "sitebarcelona",
+      "type": 0,
+      "formation": "3 - 2 - 2 - 3",
+      "avgAge": 31.4
+    },
+    {
+      "id": 2,
+      "name": "Real Madrid",
+      "description": "Zidane's team",
+      "url": "siterealmadrid",
+      "type": 0,
+      "formation": "3 - 2 - 3 - 1",
+      "avgAge": 31.7
+    },
+    {
+      "id": 3,
+      "name": "Milan",
+      "description": "Kaká's former team",
+      "url": "sitemilan",
+      "type": 0,
+      "formation": "3 - 4 - 3",
+      "avgAge": 22.5
+    },
+    {
+      "id": 4,
+      "name": "Liverpool",
+      "description": "Plays at Anfield",
+      "url": "siteliverpool",
+      "type": 1,
+      "formation": "3 - 5 - 2",
+      "avgAge": 31.9
+    },
+    {
+      "id": 5,
+      "name": "Bayern Munich",
+      "description": "Champions league champion",
+      "url": "sitebayer",
+      "type": 1,
+      "formation": "4 - 2 - 3 - 1",
+      "avgAge": 31.3
+    },
+    {
+      "id": 6,
+      "name": "Lazio",
+      "description": "Italian team",
+      "url": "sitelazio",
+      "type": 1,
+      "formation": "4 - 3 - 1 - 1",
+      "avgAge": 31.6
+    }
+  ]
+}

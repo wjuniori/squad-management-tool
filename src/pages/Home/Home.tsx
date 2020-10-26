@@ -15,14 +15,40 @@ import { Team } from '../../@types/team';
 import Card from '../../components/Card/Card';
 import { sortByKeyAndDirection } from '../../util';
 import { Direction } from '../../@types/enum';
+import { ErrorMessage } from '../../@types/message';
+import useLoader from '../../hooks/useLoader';
+import useToast from '../../hooks/useToast';
 
 const Home: React.FC = () => {
   const { teams, setTeams, setSelectedTeam } = useTeams();
   const history = useHistory();
+  const { addToast } = useToast();
+  const { addLoader, removeLoader } = useLoader();
 
   useEffect(() => {
     if (!teams.length) {
-      setTeams(teamsData);
+      addLoader();
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // eslint-disable-next-line prefer-promise-reject-errors
+          // return reject(123);
+
+          return resolve(teamsData);
+        }, 2000);
+      })
+        .then(({ data }: any) => {
+          setTeams(data);
+        })
+        .catch(() => {
+          addToast({
+            type: 'error',
+            title: 'Error',
+            description: ErrorMessage.NoService,
+          });
+        })
+        .finally(() => {
+          removeLoader();
+        });
     }
     // eslint-disable-next-line
   }, []);

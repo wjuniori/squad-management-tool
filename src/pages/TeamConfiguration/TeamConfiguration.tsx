@@ -9,11 +9,16 @@ import useFormTeam from '../../hooks/useFormTeam';
 import FormTeam from '../../components/Forms/FormTeam/FormTeam';
 import useTeams from '../../hooks/useTeams';
 import { Team } from '../../@types/team';
+import useLoader from '../../hooks/useLoader';
+import useToast from '../../hooks/useToast';
+import { SuccessMessage } from '../../@types/message';
 
 const TeamConfiguration: React.FC = () => {
   const { team, setTeam, handleChange } = useFormTeam({} as Team);
   const { teams, selectedTeam, setTeams, setSelectedTeam } = useTeams();
   const history = useHistory();
+  const { addLoader, removeLoader } = useLoader();
+  const { addToast } = useToast();
 
   useEffect(() => {
     if (selectedTeam.id) {
@@ -27,16 +32,25 @@ const TeamConfiguration: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    addLoader();
+    let message: string;
     if (team.id) {
       const index = teams.findIndex((teamLocal) => {
         return teamLocal.id === team.id;
       });
       teams.splice(index, 1, team);
+      message = SuccessMessage.updateOk;
     } else {
       team.id = teams.length + 1;
       setTeams([...teams, team]);
+      message = SuccessMessage.registerOk;
     }
     history.push('/');
+    addToast({
+      type: 'success',
+      title: message,
+    });
+    removeLoader();
   };
 
   return (
