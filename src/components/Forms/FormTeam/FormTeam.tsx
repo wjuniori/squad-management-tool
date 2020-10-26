@@ -1,11 +1,14 @@
 import React from 'react';
 import { Team } from '../../../@types/team';
-import Title from './FormTeam.styles';
+import {
+  Title,
+  LabelRadioButton,
+  ButtonPrimaryCustom,
+} from './FormTeam.styles';
 import Row from '../../GridSystem/Row/Row';
 import Col from '../../GridSystem/Col/Col';
 import InputField from '../InputField/InputField';
 import RadioButtonField from '../RadioButtonField/RadioButtonField';
-import ButtonPrimary from '../../Buttons/ButtonPrimary/ButtonPrimary';
 import SelectField from '../SelectField/SelectField';
 
 interface FormTeamProps {
@@ -22,6 +25,7 @@ const FormTeam: React.FC<FormTeamProps> = ({ team, onSubmit, onChange }) => {
           <Title>Team Information</Title>
         </Col>
       </Row>
+
       <Row>
         <Col width="50%">
           <InputField
@@ -49,6 +53,7 @@ const FormTeam: React.FC<FormTeamProps> = ({ team, onSubmit, onChange }) => {
             required
             onChange={onChange}
           />
+          <LabelRadioButton>Team type</LabelRadioButton>
           <RadioButtonField
             value={team.type}
             name="type"
@@ -65,6 +70,7 @@ const FormTeam: React.FC<FormTeamProps> = ({ team, onSubmit, onChange }) => {
           />
         </Col>
       </Row>
+
       <Row>
         <Col width="100%">
           <Title>Configure Squad</Title>
@@ -92,7 +98,6 @@ const FormTeam: React.FC<FormTeamProps> = ({ team, onSubmit, onChange }) => {
               { value: '5 - 4 -1', label: '5 - 4 -1' },
             ]}
           />
-          <ButtonPrimary type="submit">Save</ButtonPrimary>
         </Col>
         <Col width="50%">
           <InputField
@@ -101,6 +106,12 @@ const FormTeam: React.FC<FormTeamProps> = ({ team, onSubmit, onChange }) => {
             value=""
             // onChange={onChange}
           />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col width="50%">
+          <ButtonPrimaryCustom type="submit">Save</ButtonPrimaryCustom>
         </Col>
       </Row>
     </form>

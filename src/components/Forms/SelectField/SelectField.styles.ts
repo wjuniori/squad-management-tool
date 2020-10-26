@@ -2,12 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Label = styled.label`
   font-size: 1.4rem;
-  font-weight: 400;
-  color: #837775;
-`;
-
-export const Option = styled.option`
-  padding: 16px 8px;
+  font-weight: bold;
 `;
 
 export const Select = styled.select`

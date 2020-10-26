@@ -31,10 +31,12 @@ export const Image = styled.img`
   width: 100%;
   max-width: 69.3px; /* original image width: 99px */
   height: auto;
+  margin-right: 20px;
 `;
 
 export const Text = styled.span`
   display: none;
+  margin-right: 5px;
 
   /* Small ≥576px */
   @media (min-width: 576px) {
