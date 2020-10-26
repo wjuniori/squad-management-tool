@@ -17,16 +17,18 @@ import { sortByKeyAndDirection } from '../../util';
 import { Direction } from '../../@types/enum';
 
 const Home: React.FC = () => {
-  const { teams, setTeams } = useTeams();
+  const { teams, setTeams, setSelectedTeam } = useTeams();
   const history = useHistory();
 
   useEffect(() => {
-    // console.log('teams', teams);
-    setTeams(teamsData);
-  }, [setTeams]);
+    if (!teams.length) {
+      setTeams(teamsData);
+    }
+    // eslint-disable-next-line
+  }, []);
 
   const avgAgeSortedItems = useMemo(() => {
-    const sortableTeams = [...teams];
+    const sortableTeams = teams.filter((filteredTeam) => filteredTeam.avgAge);
     sortableTeams.sort((itemA, itemB) =>
       sortByKeyAndDirection(itemA, itemB, 'avgAge', Direction.Ascending)
     );
@@ -39,10 +41,11 @@ const Home: React.FC = () => {
 
   const handleClickEdit = (team: Team) => {
     history.push('/team');
+    setSelectedTeam(team);
   };
 
   const handleClickRemove = (team: Team) => {
-    console.log('Button Remove was clicked');
+    setTeams(teams.filter((filteredTeam) => filteredTeam.id !== team.id));
   };
 
   return (

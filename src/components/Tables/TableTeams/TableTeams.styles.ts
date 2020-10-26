@@ -20,6 +20,7 @@ export const TableRowHover = styled(Table.Row)`
 `;
 
 export const TableCellAction = styled(Table.Cell)`
+  text-align: right;
   svg {
     visibility: hidden;
 

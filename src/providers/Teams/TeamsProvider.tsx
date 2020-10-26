@@ -4,9 +4,12 @@ import { TeamsContext } from '../../contexts/Teams/TeamsContext';
 
 const TeamsProvider: React.FC = ({ children }) => {
   const [teams, setTeams] = useState<Team[]>([]);
+  const [selectedTeam, setSelectedTeam] = useState<Team>({} as Team);
 
   return (
-    <TeamsContext.Provider value={{ teams, setTeams }}>
+    <TeamsContext.Provider
+      value={{ teams, selectedTeam, setTeams, setSelectedTeam }}
+    >
       {children}
     </TeamsContext.Provider>
   );

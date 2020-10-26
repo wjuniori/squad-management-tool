@@ -76,7 +76,7 @@ const FormTeam: React.FC<FormTeamProps> = ({ team, onSubmit, onChange }) => {
           <SelectField
             label="Formation"
             name="formation"
-            value={team.formation}
+            value={team.formation || ''}
             onChange={onChange}
             required
             options={[
