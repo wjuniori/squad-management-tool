@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../pages/Home/Home';
+import Dashboard from '../pages/Dashboard/Dashboard';
 import TeamConfiguration from '../pages/TeamConfiguration/TeamConfiguration';
 
 const Routes: React.FC = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
+    <Route exact path="/" component={Dashboard} />
     <Route path="/team" component={TeamConfiguration} />
   </Switch>
 );

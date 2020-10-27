@@ -9,7 +9,7 @@ import WhiteBox from '../../components/WhiteBox/WhiteBox';
 import useTeams from '../../hooks/useTeams';
 import teamsData from '../../data/teams.json';
 import TableTeams from '../../components/Tables/TableTeams/TableTeams';
-import { ButtonCreate, PurpleBox } from './Home.styles';
+import { ButtonCreate, PurpleBox } from './Dashboard.styles';
 import ListAvg from '../../components/ListAvg/ListAvg';
 import { Team } from '../../@types/team';
 import Card from '../../components/Card/Card';
@@ -19,7 +19,7 @@ import { ErrorMessage } from '../../@types/message';
 import useLoader from '../../hooks/useLoader';
 import useToast from '../../hooks/useToast';
 
-const Home: React.FC = () => {
+const Dashboard: React.FC = () => {
   const { teams, setTeams, setSelectedTeam } = useTeams();
   const history = useHistory();
   const { addToast } = useToast();
@@ -145,4 +145,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Dashboard;
