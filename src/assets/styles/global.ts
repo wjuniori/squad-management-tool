@@ -55,7 +55,6 @@ export default createGlobalStyle`
   button,
   textarea {
     font: 500 1.6rem Poppins;
-    /* color: var(--color-text-base); */
   }
 
   #root {
