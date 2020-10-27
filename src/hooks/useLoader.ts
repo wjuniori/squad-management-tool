@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import {
   LoaderContextData,
   LoaderContext,
-} from '../providers/Loader/LoaderProvider';
+} from '../contexts/Loader/LoaderContext';
 import { ErrorMessage } from '../@types/message';
 
 const useLoader = (): LoaderContextData => {

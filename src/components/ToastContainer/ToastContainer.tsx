@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTransition } from 'react-spring';
-import { ToastMessage } from '../../providers/Toast/ToastProvider';
+import { ToastMessage } from '../../contexts/Toast/ToastContext';
 import Wrapper from './ToastContainer.styles';
 import Toast from './Toast/Toast';
 

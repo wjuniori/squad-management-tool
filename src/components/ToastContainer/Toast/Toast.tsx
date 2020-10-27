@@ -5,7 +5,7 @@ import {
   FiCheckCircle,
   FiInfo,
 } from 'react-icons/fi';
-import { ToastMessage } from '../../../providers/Toast/ToastProvider';
+import { ToastMessage } from '../../../contexts/Toast/ToastContext';
 import ToastWrapper from './Toast.styles';
 import useToast from '../../../hooks/useToast';
 
