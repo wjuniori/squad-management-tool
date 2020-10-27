@@ -1,16 +1,8 @@
-import React, { useState, useCallback, createContext } from 'react';
+import React, { useState, useCallback } from 'react';
 import Loader from '../../components/Modals/Loader/Loader';
+import { LoaderContext } from '../../contexts/Loader/LoaderContext';
 
-export interface LoaderContextData {
-  addLoader(): void;
-  removeLoader(): void;
-}
-
-export const LoaderContext = createContext<LoaderContextData>(
-  {} as LoaderContextData
-);
-
-export const LoaderProvider: React.FC = ({ children }) => {
+const LoaderProvider: React.FC = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const addLoader = useCallback(() => {
@@ -28,3 +20,5 @@ export const LoaderProvider: React.FC = ({ children }) => {
     </LoaderContext.Provider>
   );
 };
+
+export default LoaderProvider;

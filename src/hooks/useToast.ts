@@ -1,8 +1,5 @@
 import { useContext } from 'react';
-import {
-  ToastContextData,
-  ToastContext,
-} from '../providers/Toast/ToastProvider';
+import { ToastContextData, ToastContext } from '../contexts/Toast/ToastContext';
 import { ErrorMessage } from '../@types/message';
 
 const useToast = (): ToastContextData => {

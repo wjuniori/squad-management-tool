@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamsProvider from '../Teams/TeamsProvider';
-import { LoaderProvider } from '../Loader/LoaderProvider';
-import { ToastProvider } from '../Toast/ToastProvider';
+import LoaderProvider from '../Loader/LoaderProvider';
+import ToastProvider from '../Toast/ToastProvider';
 
 const AppProvider: React.FC = ({ children }) => (
   <LoaderProvider>
